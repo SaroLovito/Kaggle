@@ -73,7 +73,7 @@ xgb = XGBClassifier(verbosity='0')
 cv_xgb = cross_val_score(xgb, X_train, y_train, scoring="accuracy", cv=20)
 
 mlp = MLPClassifier()
-cv_mlp = cross_val_score(mlp, X_train, scoring="accuracy", cv=20)
+cv_mlp = cross_val_score(mlp, X_train, y_train, scoring="accuracy", cv=20)
 baseline_summary = {"LogisticRegression": cv_lr.mean(),
                     "KNearestNeighborhood": cv_knn.mean(),
                     "DecisionTree": cv_dt.mean(),
